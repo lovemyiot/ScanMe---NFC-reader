@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA0E3313265D6278006750A8 /* ScanMe - NFC reader.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "ScanMe - NFC reader.entitlements"; sourceTree = "<group>"; };
 		DAF44AFD2613371700883D19 /* ScanMe - NFC reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScanMe - NFC reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF44B002613371700883D19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF44B022613371700883D19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +38,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA3159362639FBBA00141617 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA3159372639FBC000141617 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DAF44B0B2613371900883D19 /* LaunchScreen.storyboard */,
+				DAF44B062613371700883D19 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA3159382639FBC600141617 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DAF44B042613371700883D19 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DA3159392639FC1000141617 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DAF44B002613371700883D19 /* AppDelegate.swift */,
+				DAF44B022613371700883D19 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		DAF44AF42613371700883D19 = {
 			isa = PBXGroup;
 			children = (
@@ -56,12 +90,12 @@
 		DAF44AFF2613371700883D19 /* ScanMe - NFC reader */ = {
 			isa = PBXGroup;
 			children = (
-				DAF44B002613371700883D19 /* AppDelegate.swift */,
-				DAF44B022613371700883D19 /* SceneDelegate.swift */,
-				DAF44B042613371700883D19 /* ViewController.swift */,
-				DAF44B062613371700883D19 /* Main.storyboard */,
+				DA0E3313265D6278006750A8 /* ScanMe - NFC reader.entitlements */,
+				DA3159392639FC1000141617 /* App */,
+				DA3159382639FBC600141617 /* Controller */,
+				DA3159372639FBC000141617 /* View */,
+				DA3159362639FBBA00141617 /* Model */,
 				DAF44B092613371900883D19 /* Assets.xcassets */,
-				DAF44B0B2613371900883D19 /* LaunchScreen.storyboard */,
 				DAF44B0E2613371900883D19 /* Info.plist */,
 			);
 			path = "ScanMe - NFC reader";
@@ -286,15 +320,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ScanMe - NFC reader/ScanMe - NFC reader.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6A5E5WS27N;
+				DEVELOPMENT_TEAM = 76Y8JYYXLJ;
 				INFOPLIST_FILE = "ScanMe - NFC reader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "lovemyiot.ScanMe---NFC-reader";
+				PRODUCT_BUNDLE_IDENTIFIER = lovemyiot.ScanMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -305,15 +342,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ScanMe - NFC reader/ScanMe - NFC reader.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6A5E5WS27N;
+				DEVELOPMENT_TEAM = 76Y8JYYXLJ;
 				INFOPLIST_FILE = "ScanMe - NFC reader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "lovemyiot.ScanMe---NFC-reader";
+				PRODUCT_BUNDLE_IDENTIFIER = lovemyiot.ScanMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
