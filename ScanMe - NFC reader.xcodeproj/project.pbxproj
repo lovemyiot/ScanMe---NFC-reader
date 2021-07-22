@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		DAF44B012613371700883D19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF44B002613371700883D19 /* AppDelegate.swift */; };
 		DAF44B032613371700883D19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF44B022613371700883D19 /* SceneDelegate.swift */; };
-		DAF44B052613371700883D19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF44B042613371700883D19 /* ViewController.swift */; };
+		DAF44B052613371700883D19 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF44B042613371700883D19 /* HomeViewController.swift */; };
 		DAF44B082613371700883D19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF44B062613371700883D19 /* Main.storyboard */; };
 		DAF44B0A2613371900883D19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAF44B092613371900883D19 /* Assets.xcassets */; };
 		DAF44B0D2613371900883D19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF44B0B2613371900883D19 /* LaunchScreen.storyboard */; };
+		DAFF5E7D26A9F772004D469F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF5E7C26A9F772004D469F /* HomeViewModel.swift */; };
+		DAFF5E8026A9F908004D469F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF5E7F26A9F908004D469F /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,11 +22,13 @@
 		DAF44AFD2613371700883D19 /* ScanMe - NFC reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScanMe - NFC reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF44B002613371700883D19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF44B022613371700883D19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DAF44B042613371700883D19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DAF44B042613371700883D19 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DAF44B072613371700883D19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DAF44B092613371900883D19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAF44B0C2613371900883D19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAF44B0E2613371900883D19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAFF5E7C26A9F772004D469F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		DAFF5E7F26A9F908004D469F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,28 +42,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DA3159362639FBBA00141617 /* Model */ = {
+		DA3159362639FBBA00141617 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		DA3159372639FBC000141617 /* View */ = {
+		DA3159382639FBC600141617 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				DAF44B0B2613371900883D19 /* LaunchScreen.storyboard */,
+				DAFF5E7C26A9F772004D469F /* HomeViewModel.swift */,
+				DAF44B042613371700883D19 /* HomeViewController.swift */,
 				DAF44B062613371700883D19 /* Main.storyboard */,
 			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		DA3159382639FBC600141617 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				DAF44B042613371700883D19 /* ViewController.swift */,
-			);
-			path = Controller;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		DA3159392639FC1000141617 /* App */ = {
@@ -67,6 +64,7 @@
 			children = (
 				DAF44B002613371700883D19 /* AppDelegate.swift */,
 				DAF44B022613371700883D19 /* SceneDelegate.swift */,
+				DAF44B0B2613371900883D19 /* LaunchScreen.storyboard */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -90,15 +88,23 @@
 		DAF44AFF2613371700883D19 /* ScanMe - NFC reader */ = {
 			isa = PBXGroup;
 			children = (
-				DA0E3313265D6278006750A8 /* ScanMe - NFC reader.entitlements */,
+				DAFF5E7E26A9F8A5004D469F /* Supporting files */,
 				DA3159392639FC1000141617 /* App */,
-				DA3159382639FBC600141617 /* Controller */,
-				DA3159372639FBC000141617 /* View */,
-				DA3159362639FBBA00141617 /* Model */,
-				DAF44B092613371900883D19 /* Assets.xcassets */,
-				DAF44B0E2613371900883D19 /* Info.plist */,
+				DA3159382639FBC600141617 /* Home */,
+				DA3159362639FBBA00141617 /* Models */,
 			);
 			path = "ScanMe - NFC reader";
+			sourceTree = "<group>";
+		};
+		DAFF5E7E26A9F8A5004D469F /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				DA0E3313265D6278006750A8 /* ScanMe - NFC reader.entitlements */,
+				DAF44B0E2613371900883D19 /* Info.plist */,
+				DAF44B092613371900883D19 /* Assets.xcassets */,
+				DAFF5E7F26A9F908004D469F /* Constants.swift */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,9 +177,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAF44B052613371700883D19 /* ViewController.swift in Sources */,
+				DAFF5E8026A9F908004D469F /* Constants.swift in Sources */,
+				DAF44B052613371700883D19 /* HomeViewController.swift in Sources */,
 				DAF44B012613371700883D19 /* AppDelegate.swift in Sources */,
 				DAF44B032613371700883D19 /* SceneDelegate.swift in Sources */,
+				DAFF5E7D26A9F772004D469F /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +328,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "ScanMe - NFC reader/ScanMe - NFC reader.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "/Users/jacekkopaczel/Desktop/Programowanie/Swift/Inżynierka/ScanMe - NFC reader/ScanMe - NFC reader/Supporting files/Info.plist";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 76Y8JYYXLJ;
@@ -342,7 +350,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "ScanMe - NFC reader/ScanMe - NFC reader.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "/Users/jacekkopaczel/Desktop/Programowanie/Swift/Inżynierka/ScanMe - NFC reader/ScanMe - NFC reader/Supporting files/Info.plist";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 76Y8JYYXLJ;
