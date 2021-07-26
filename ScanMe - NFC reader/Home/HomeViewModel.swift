@@ -11,16 +11,36 @@ class HomeViewModel: NSObject {
     
 }
 
-extension HomeViewModel: NFCNDEFReaderSessionDelegate {
-    func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
-        print("Error with launching the scanning session: \(error.localizedDescription)")
+extension HomeViewModel: NFCTagReaderSessionDelegate {
+    func tagReaderSessionDidBecomeActive(_ session: NFCTagReaderSession) {
+        print("Session active.")
     }
     
-    func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
-        print("Detected an NDEF message.")
+    func tagReaderSession(_ session: NFCTagReaderSession, didInvalidateWithError error: Error) {
+        print("Session ended: \(error.localizedDescription)")
     }
     
-    func readerSession(_ session: NFCNDEFReaderSession, didDetect tags: [NFCNDEFTag]) {
-        print("Detected an NDEF tag.")
+    func tagReaderSession(_ session: NFCTagReaderSession, didDetect tags: [NFCTag]) {
+        guard let tag = tags.first else { return }
+        if tags.count > 1 {
+            session.alertMessage = DescriptionKeys.tooManyTags
+            session.invalidate()
+        }
+        session.connect(to: tag) { error in
+            if error != nil {
+                session.invalidate(errorMessage: DescriptionKeys.connectionFailed)
+            }
+            
+            switch tag {
+            case .miFare(let mifareTag):
+                let identifier = mifareTag.identifier.map { String(format: "%.2hhx", $0) }.joined()
+                print("MiFare tag detected: \(identifier)")
+            default:
+                print("Unsupported tag type detected!")
+            }
+            session.invalidate()
+        }
     }
+    
+    
 }

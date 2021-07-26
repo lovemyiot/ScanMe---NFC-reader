@@ -88,10 +88,12 @@
 		DAF44AFF2613371700883D19 /* ScanMe - NFC reader */ = {
 			isa = PBXGroup;
 			children = (
-				DAFF5E7E26A9F8A5004D469F /* Supporting files */,
+				DA0E3313265D6278006750A8 /* ScanMe - NFC reader.entitlements */,
+				DAF44B0E2613371900883D19 /* Info.plist */,
 				DA3159392639FC1000141617 /* App */,
-				DA3159382639FBC600141617 /* Home */,
 				DA3159362639FBBA00141617 /* Models */,
+				DA3159382639FBC600141617 /* Home */,
+				DAFF5E7E26A9F8A5004D469F /* Supporting files */,
 			);
 			path = "ScanMe - NFC reader";
 			sourceTree = "<group>";
@@ -99,8 +101,6 @@
 		DAFF5E7E26A9F8A5004D469F /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				DA0E3313265D6278006750A8 /* ScanMe - NFC reader.entitlements */,
-				DAF44B0E2613371900883D19 /* Info.plist */,
 				DAF44B092613371900883D19 /* Assets.xcassets */,
 				DAFF5E7F26A9F908004D469F /* Constants.swift */,
 			);
@@ -328,7 +328,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "/Users/jacekkopaczel/Desktop/Programowanie/Swift/Inżynierka/ScanMe - NFC reader/ScanMe - NFC reader/Supporting files/Info.plist";
+				CODE_SIGN_ENTITLEMENTS = "ScanMe - NFC reader/ScanMe - NFC reader.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 76Y8JYYXLJ;
@@ -350,7 +350,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "/Users/jacekkopaczel/Desktop/Programowanie/Swift/Inżynierka/ScanMe - NFC reader/ScanMe - NFC reader/Supporting files/Info.plist";
+				CODE_SIGN_ENTITLEMENTS = "ScanMe - NFC reader/ScanMe - NFC reader.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 76Y8JYYXLJ;
