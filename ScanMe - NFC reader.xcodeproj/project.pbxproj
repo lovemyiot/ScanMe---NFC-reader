@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C1D880D021CE1154F935AC05 /* Pods_ScanMe___NFC_reader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C954248A3644630D98432BDB /* Pods_ScanMe___NFC_reader.framework */; };
+		DA1DAD4526B1EBA4002FA5BD /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DAD4426B1EBA4002FA5BD /* HomeCoordinator.swift */; };
+		DA1DAD4826B1EE09002FA5BD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DAD4726B1EE09002FA5BD /* UIViewController.swift */; };
 		DAF44B012613371700883D19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF44B002613371700883D19 /* AppDelegate.swift */; };
 		DAF44B032613371700883D19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF44B022613371700883D19 /* SceneDelegate.swift */; };
 		DAF44B052613371700883D19 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF44B042613371700883D19 /* HomeViewController.swift */; };
@@ -18,7 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A8F971CF87FAC50E5F6FC16 /* Pods-ScanMe - NFC reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanMe - NFC reader.debug.xcconfig"; path = "Target Support Files/Pods-ScanMe - NFC reader/Pods-ScanMe - NFC reader.debug.xcconfig"; sourceTree = "<group>"; };
+		72272B49AA9FEE08073933A1 /* Pods-ScanMe - NFC reader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanMe - NFC reader.release.xcconfig"; path = "Target Support Files/Pods-ScanMe - NFC reader/Pods-ScanMe - NFC reader.release.xcconfig"; sourceTree = "<group>"; };
+		C954248A3644630D98432BDB /* Pods_ScanMe___NFC_reader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_ScanMe___NFC_reader.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0E3313265D6278006750A8 /* ScanMe - NFC reader.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "ScanMe - NFC reader.entitlements"; sourceTree = "<group>"; };
+		DA1DAD4426B1EBA4002FA5BD /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		DA1DAD4726B1EE09002FA5BD /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		DAF44AFD2613371700883D19 /* ScanMe - NFC reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScanMe - NFC reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF44B002613371700883D19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF44B022613371700883D19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,12 +44,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1D880D021CE1154F935AC05 /* Pods_ScanMe___NFC_reader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B3506EC6728EC363201E3D5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3A8F971CF87FAC50E5F6FC16 /* Pods-ScanMe - NFC reader.debug.xcconfig */,
+				72272B49AA9FEE08073933A1 /* Pods-ScanMe - NFC reader.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		95BA40608F7C850E88D83DCA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C954248A3644630D98432BDB /* Pods_ScanMe___NFC_reader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA1DAD4626B1EDDF002FA5BD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DA1DAD4726B1EE09002FA5BD /* UIViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		DA3159362639FBBA00141617 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -52,8 +86,9 @@
 		DA3159382639FBC600141617 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				DAFF5E7C26A9F772004D469F /* HomeViewModel.swift */,
+				DA1DAD4426B1EBA4002FA5BD /* HomeCoordinator.swift */,
 				DAF44B042613371700883D19 /* HomeViewController.swift */,
+				DAFF5E7C26A9F772004D469F /* HomeViewModel.swift */,
 				DAF44B062613371700883D19 /* Main.storyboard */,
 			);
 			path = Home;
@@ -74,6 +109,8 @@
 			children = (
 				DAF44AFF2613371700883D19 /* ScanMe - NFC reader */,
 				DAF44AFE2613371700883D19 /* Products */,
+				1B3506EC6728EC363201E3D5 /* Pods */,
+				95BA40608F7C850E88D83DCA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,8 +128,9 @@
 				DA0E3313265D6278006750A8 /* ScanMe - NFC reader.entitlements */,
 				DAF44B0E2613371900883D19 /* Info.plist */,
 				DA3159392639FC1000141617 /* App */,
-				DA3159362639FBBA00141617 /* Models */,
+				DA1DAD4626B1EDDF002FA5BD /* Extensions */,
 				DA3159382639FBC600141617 /* Home */,
+				DA3159362639FBBA00141617 /* Models */,
 				DAFF5E7E26A9F8A5004D469F /* Supporting files */,
 			);
 			path = "ScanMe - NFC reader";
@@ -114,9 +152,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAF44B112613371900883D19 /* Build configuration list for PBXNativeTarget "ScanMe - NFC reader" */;
 			buildPhases = (
+				69B0EDEA988EBAB0AAC95C5B /* [CP] Check Pods Manifest.lock */,
 				DAF44AF92613371700883D19 /* Sources */,
 				DAF44AFA2613371700883D19 /* Frameworks */,
 				DAF44AFB2613371700883D19 /* Resources */,
+				36BE9FB30F9F5929AF4A66D9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,16 +212,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		36BE9FB30F9F5929AF4A66D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScanMe - NFC reader/Pods-ScanMe - NFC reader-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScanMe - NFC reader/Pods-ScanMe - NFC reader-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScanMe - NFC reader/Pods-ScanMe - NFC reader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69B0EDEA988EBAB0AAC95C5B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScanMe - NFC reader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DAF44AF92613371700883D19 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA1DAD4826B1EE09002FA5BD /* UIViewController.swift in Sources */,
 				DAFF5E8026A9F908004D469F /* Constants.swift in Sources */,
 				DAF44B052613371700883D19 /* HomeViewController.swift in Sources */,
 				DAF44B012613371700883D19 /* AppDelegate.swift in Sources */,
 				DAF44B032613371700883D19 /* SceneDelegate.swift in Sources */,
 				DAFF5E7D26A9F772004D469F /* HomeViewModel.swift in Sources */,
+				DA1DAD4526B1EBA4002FA5BD /* HomeCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +409,7 @@
 		};
 		DAF44B122613371900883D19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A8F971CF87FAC50E5F6FC16 /* Pods-ScanMe - NFC reader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -333,6 +418,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 76Y8JYYXLJ;
 				INFOPLIST_FILE = "ScanMe - NFC reader/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -347,6 +433,7 @@
 		};
 		DAF44B132613371900883D19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72272B49AA9FEE08073933A1 /* Pods-ScanMe - NFC reader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -355,6 +442,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 76Y8JYYXLJ;
 				INFOPLIST_FILE = "ScanMe - NFC reader/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

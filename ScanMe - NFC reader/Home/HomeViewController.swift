@@ -10,12 +10,16 @@ import CoreNFC
 
 class HomeViewController: UIViewController {
     var session: NFCTagReaderSession?
-    
-    let viewModel: HomeViewModel = HomeViewModel()
+    var viewModel: HomeViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         checkNFCAvailability()
+        setupView()
+    }
+    
+    private func setupView() {
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     private func checkNFCAvailability() {

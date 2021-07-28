@@ -6,9 +6,14 @@
 //
 
 import CoreNFC
+import XCoordinator
 
 class HomeViewModel: NSObject {
+    let router: UnownedRouter<HomeRoute>
     
+    init(router: UnownedRouter<HomeRoute>) {
+        self.router = router
+    }
 }
 
 extension HomeViewModel: NFCTagReaderSessionDelegate {
