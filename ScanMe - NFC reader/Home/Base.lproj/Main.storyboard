@@ -17,22 +17,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundBlue" translatesAutoresizingMaskIntoConstraints="NO" id="F5z-uO-Dgi">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHF-vY-ZUf">
-                                <rect key="frame" x="171" y="427" width="72" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Detect"/>
+                                <rect key="frame" x="30" y="574" width="354" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="25"/>
+                                <state key="normal" title="DETECT">
+                                    <color key="titleColor" systemColor="linkColor"/>
+                                </state>
                                 <connections>
                                     <action selector="detectPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JdK-sg-XFw"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ScanMe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAd-aJ-iem">
+                                <rect key="frame" x="50" y="159" width="314" height="76"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="60"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NFC reader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMU-QI-WTh">
+                                <rect key="frame" x="50" y="260" width="314" height="25.5"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="NHF-vY-ZUf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4bN-uv-IOO"/>
-                            <constraint firstItem="NHF-vY-ZUf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DrY-hV-v9h"/>
+                            <constraint firstItem="tAd-aJ-iem" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="115" id="35G-Zf-R3L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NHF-vY-ZUf" secondAttribute="bottom" constant="250" id="AWt-W1-LFa"/>
+                            <constraint firstItem="F5z-uO-Dgi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DRZ-kZ-Xdg"/>
+                            <constraint firstItem="NHF-vY-ZUf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="G5s-4g-X5v"/>
+                            <constraint firstAttribute="trailing" secondItem="F5z-uO-Dgi" secondAttribute="trailing" id="RdM-7O-2h2"/>
+                            <constraint firstItem="F5z-uO-Dgi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="X06-G1-L0c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tAd-aJ-iem" secondAttribute="trailing" constant="50" id="bX7-us-mkZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eMU-QI-WTh" secondAttribute="trailing" constant="50" id="eVb-EZ-Nkh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NHF-vY-ZUf" secondAttribute="trailing" constant="30" id="hl6-dR-RDm"/>
+                            <constraint firstItem="eMU-QI-WTh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="iHS-aD-Q8c"/>
+                            <constraint firstItem="eMU-QI-WTh" firstAttribute="top" secondItem="tAd-aJ-iem" secondAttribute="bottom" constant="25" id="kKh-oK-2zn"/>
+                            <constraint firstItem="tAd-aJ-iem" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="rzo-R5-Hob"/>
+                            <constraint firstAttribute="bottom" secondItem="F5z-uO-Dgi" secondAttribute="bottom" id="tP5-xr-azC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="detectButton" destination="NHF-vY-ZUf" id="PQn-0a-QuA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -40,6 +72,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backgroundBlue" width="1024" height="1024"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

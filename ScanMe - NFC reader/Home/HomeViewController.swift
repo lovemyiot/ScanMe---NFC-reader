@@ -9,6 +9,8 @@ import UIKit
 import CoreNFC
 
 class HomeViewController: UIViewController {
+    @IBOutlet weak var detectButton: UIButton!
+    
     var session: NFCTagReaderSession?
     var viewModel: HomeViewModel!
     
@@ -20,10 +22,12 @@ class HomeViewController: UIViewController {
     
     private func setupView() {
         navigationController?.setNavigationBarHidden(true, animated: false)
+        detectButton.layer.cornerRadius = 6
     }
     
     private func checkNFCAvailability() {
         if !NFCTagReaderSession.readingAvailable {
+            detectButton.isEnabled = false
             let alertController = UIAlertController(
                         title: "Scanning Not Supported",
                         message: "This device doesn't support tag scanning.",
