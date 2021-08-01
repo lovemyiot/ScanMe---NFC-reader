@@ -28,12 +28,7 @@ class HomeViewController: UIViewController {
     private func checkNFCAvailability() {
         if !NFCTagReaderSession.readingAvailable {
             detectButton.isEnabled = false
-            let alertController = UIAlertController(
-                        title: "Scanning Not Supported",
-                        message: "This device doesn't support tag scanning.",
-                        preferredStyle: .alert
-                    )
-            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            let alertController = viewModel.scanningNotSupportedAlert()
             self.present(alertController, animated: true, completion: nil)
         }
     }

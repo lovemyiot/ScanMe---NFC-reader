@@ -14,6 +14,16 @@ class HomeViewModel: NSObject {
     init(router: UnownedRouter<MainRoute>) {
         self.router = router
     }
+    
+    func scanningNotSupportedAlert() -> UIAlertController {
+        let alertController = UIAlertController(
+                    title: "Scanning Not Supported",
+                    message: "This device doesn't support tag scanning.",
+                    preferredStyle: .alert
+                )
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        return alertController
+    }
 }
 
 // MARK: - NFCTagReaderSessionDelegate
@@ -41,6 +51,19 @@ extension HomeViewModel: NFCTagReaderSessionDelegate {
             case .miFare(let mifareTag):
                 let identifier = mifareTag.identifier.map { String(format: "%.2hhx", $0) }.joined()
                 print("MiFare tag detected: \(identifier)")
+                DataManager.shared.fetchCommand(for: identifier, from: FirestoreKeys.tagsCollection) {
+                    switch $0 {
+                    case .success(let tagDetails):
+                        print("Command ID for tag \(identifier): \(tagDetails)")
+                    case .failure(let error):
+                        switch error {
+                        case .decodingError:
+                            print("Error decoding response from Firestore!")
+                        case .documentNotExist:
+                            print("Document does not exist in Firestore!")
+                        }
+                    }
+                }
             default:
                 print("Unsupported tag type detected!")
             }

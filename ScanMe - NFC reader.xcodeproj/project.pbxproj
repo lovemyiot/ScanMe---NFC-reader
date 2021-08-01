@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		B25EFF6A26B694F8007417A0 /* CommandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EFF6926B694F8007417A0 /* CommandViewController.swift */; };
 		B25EFF6E26B69E9C007417A0 /* CommandViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EFF6D26B69E9C007417A0 /* CommandViewModel.swift */; };
+		B25EFF7226B6AAAB007417A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B25EFF7126B6AAAB007417A0 /* GoogleService-Info.plist */; };
+		B25EFF7626B6BD9B007417A0 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EFF7526B6BD9B007417A0 /* DataManager.swift */; };
+		B25EFF7D26B72A97007417A0 /* TagDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EFF7C26B72A97007417A0 /* TagDetails.swift */; };
+		B25EFF7F26B72E40007417A0 /* FirestoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EFF7E26B72E40007417A0 /* FirestoreError.swift */; };
 		C1D880D021CE1154F935AC05 /* Pods_ScanMe___NFC_reader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C954248A3644630D98432BDB /* Pods_ScanMe___NFC_reader.framework */; };
 		DA1DAD4526B1EBA4002FA5BD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DAD4426B1EBA4002FA5BD /* MainCoordinator.swift */; };
 		DA1DAD4826B1EE09002FA5BD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DAD4726B1EE09002FA5BD /* UIViewController.swift */; };
@@ -27,6 +31,10 @@
 		72272B49AA9FEE08073933A1 /* Pods-ScanMe - NFC reader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanMe - NFC reader.release.xcconfig"; path = "Target Support Files/Pods-ScanMe - NFC reader/Pods-ScanMe - NFC reader.release.xcconfig"; sourceTree = "<group>"; };
 		B25EFF6926B694F8007417A0 /* CommandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandViewController.swift; sourceTree = "<group>"; };
 		B25EFF6D26B69E9C007417A0 /* CommandViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandViewModel.swift; sourceTree = "<group>"; };
+		B25EFF7126B6AAAB007417A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B25EFF7526B6BD9B007417A0 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		B25EFF7C26B72A97007417A0 /* TagDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagDetails.swift; path = "ScanMe - NFC reader/Managers/TagDetails.swift"; sourceTree = SOURCE_ROOT; };
+		B25EFF7E26B72E40007417A0 /* FirestoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirestoreError.swift; path = "ScanMe - NFC reader/Managers/FirestoreError.swift"; sourceTree = SOURCE_ROOT; };
 		C954248A3644630D98432BDB /* Pods_ScanMe___NFC_reader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_ScanMe___NFC_reader.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0E3313265D6278006750A8 /* ScanMe - NFC reader.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "ScanMe - NFC reader.entitlements"; sourceTree = "<group>"; };
 		DA1DAD4426B1EBA4002FA5BD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -92,6 +100,14 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		B25EFF7426B6BD8C007417A0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B25EFF7526B6BD9B007417A0 /* DataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		DA1DAD4626B1EDDF002FA5BD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +119,8 @@
 		DA3159362639FBBA00141617 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B25EFF7C26B72A97007417A0 /* TagDetails.swift */,
+				B25EFF7E26B72E40007417A0 /* FirestoreError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,6 +165,7 @@
 		DAF44AFF2613371700883D19 /* ScanMe - NFC reader */ = {
 			isa = PBXGroup;
 			children = (
+				B25EFF7426B6BD8C007417A0 /* Managers */,
 				DA3159392639FC1000141617 /* App */,
 				DA1DAD4626B1EDDF002FA5BD /* Extensions */,
 				DA3159362639FBBA00141617 /* Models */,
@@ -159,6 +178,7 @@
 		DAFF5E7E26A9F8A5004D469F /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				B25EFF7126B6AAAB007417A0 /* GoogleService-Info.plist */,
 				DAF44B0E2613371900883D19 /* Info.plist */,
 				DA0E3313265D6278006750A8 /* ScanMe - NFC reader.entitlements */,
 				DAF44B092613371900883D19 /* Assets.xcassets */,
@@ -227,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAF44B0D2613371900883D19 /* LaunchScreen.storyboard in Resources */,
+				B25EFF7226B6AAAB007417A0 /* GoogleService-Info.plist in Resources */,
 				DAF44B0A2613371900883D19 /* Assets.xcassets in Resources */,
 				DAF44B082613371700883D19 /* Main.storyboard in Resources */,
 			);
@@ -281,12 +302,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B25EFF7D26B72A97007417A0 /* TagDetails.swift in Sources */,
 				DA1DAD4826B1EE09002FA5BD /* UIViewController.swift in Sources */,
 				DAFF5E8026A9F908004D469F /* Constants.swift in Sources */,
+				B25EFF7626B6BD9B007417A0 /* DataManager.swift in Sources */,
 				DAF44B052613371700883D19 /* HomeViewController.swift in Sources */,
 				DAF44B012613371700883D19 /* AppDelegate.swift in Sources */,
 				B25EFF6A26B694F8007417A0 /* CommandViewController.swift in Sources */,
 				DAF44B032613371700883D19 /* SceneDelegate.swift in Sources */,
+				B25EFF7F26B72E40007417A0 /* FirestoreError.swift in Sources */,
 				DAFF5E7D26A9F772004D469F /* HomeViewModel.swift in Sources */,
 				DA1DAD4526B1EBA4002FA5BD /* MainCoordinator.swift in Sources */,
 				B25EFF6E26B69E9C007417A0 /* CommandViewModel.swift in Sources */,

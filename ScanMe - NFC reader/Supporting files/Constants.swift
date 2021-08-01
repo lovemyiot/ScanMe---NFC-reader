@@ -12,3 +12,7 @@ enum DescriptionKeys {
     static let tooManyTags = "More than 1 tag detected. Please remove other items and try again."
     static let connectionFailed = "Connection failed. Try again."
 }
+
+enum FirestoreKeys {
+    static let tagsCollection = "tags"
+}
