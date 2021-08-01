@@ -33,8 +33,8 @@
 		B25EFF6D26B69E9C007417A0 /* CommandViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandViewModel.swift; sourceTree = "<group>"; };
 		B25EFF7126B6AAAB007417A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B25EFF7526B6BD9B007417A0 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		B25EFF7C26B72A97007417A0 /* TagDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagDetails.swift; path = Models/TagDetails.swift; sourceTree = SOURCE_ROOT; };
-		B25EFF7E26B72E40007417A0 /* FirestoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirestoreError.swift; path = Models/FirestoreError.swift; sourceTree = SOURCE_ROOT; };
+		B25EFF7C26B72A97007417A0 /* TagDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagDetails.swift; path = "ScanMe - NFC reader/Models/TagDetails.swift"; sourceTree = SOURCE_ROOT; };
+		B25EFF7E26B72E40007417A0 /* FirestoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirestoreError.swift; path = "ScanMe - NFC reader/Models/FirestoreError.swift"; sourceTree = SOURCE_ROOT; };
 		C954248A3644630D98432BDB /* Pods_ScanMe___NFC_reader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_ScanMe___NFC_reader.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0E3313265D6278006750A8 /* ScanMe - NFC reader.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "ScanMe - NFC reader.entitlements"; sourceTree = "<group>"; };
 		DA1DAD4426B1EBA4002FA5BD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		B25EFF8026B73C41007417A0 /* Models */ = {
+		B25EFF8126B73D49007417A0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				B25EFF7C26B72A97007417A0 /* TagDetails.swift */,
@@ -147,7 +147,6 @@
 		DAF44AF42613371700883D19 = {
 			isa = PBXGroup;
 			children = (
-				B25EFF8026B73C41007417A0 /* Models */,
 				DAF44AFF2613371700883D19 /* ScanMe - NFC reader */,
 				DAF44AFE2613371700883D19 /* Products */,
 				1B3506EC6728EC363201E3D5 /* Pods */,
@@ -166,6 +165,7 @@
 		DAF44AFF2613371700883D19 /* ScanMe - NFC reader */ = {
 			isa = PBXGroup;
 			children = (
+				B25EFF8126B73D49007417A0 /* Models */,
 				B25EFF7426B6BD8C007417A0 /* Managers */,
 				DA3159392639FC1000141617 /* App */,
 				DA1DAD4626B1EDDF002FA5BD /* Extensions */,
