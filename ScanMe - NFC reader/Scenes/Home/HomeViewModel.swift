@@ -9,13 +9,14 @@ import CoreNFC
 import XCoordinator
 
 class HomeViewModel: NSObject {
-    let router: UnownedRouter<HomeRoute>
+    let router: UnownedRouter<MainRoute>
     
-    init(router: UnownedRouter<HomeRoute>) {
+    init(router: UnownedRouter<MainRoute>) {
         self.router = router
     }
 }
 
+// MARK: - NFCTagReaderSessionDelegate
 extension HomeViewModel: NFCTagReaderSessionDelegate {
     func tagReaderSessionDidBecomeActive(_ session: NFCTagReaderSession) {
         print("Session active.")
@@ -46,6 +47,4 @@ extension HomeViewModel: NFCTagReaderSessionDelegate {
             session.invalidate()
         }
     }
-    
-    
 }
