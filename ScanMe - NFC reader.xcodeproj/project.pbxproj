@@ -11,7 +11,7 @@
 		B25EFF6E26B69E9C007417A0 /* CommandViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EFF6D26B69E9C007417A0 /* CommandViewModel.swift */; };
 		B25EFF7226B6AAAB007417A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B25EFF7126B6AAAB007417A0 /* GoogleService-Info.plist */; };
 		B25EFF7626B6BD9B007417A0 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EFF7526B6BD9B007417A0 /* DataManager.swift */; };
-		B25EFF7D26B72A97007417A0 /* TagDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EFF7C26B72A97007417A0 /* TagDetails.swift */; };
+		B25EFF7D26B72A97007417A0 /* CommandDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EFF7C26B72A97007417A0 /* CommandDetailsResponse.swift */; };
 		B25EFF7F26B72E40007417A0 /* FirestoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EFF7E26B72E40007417A0 /* FirestoreError.swift */; };
 		C1D880D021CE1154F935AC05 /* Pods_ScanMe___NFC_reader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C954248A3644630D98432BDB /* Pods_ScanMe___NFC_reader.framework */; };
 		DA1DAD4526B1EBA4002FA5BD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DAD4426B1EBA4002FA5BD /* MainCoordinator.swift */; };
@@ -33,7 +33,7 @@
 		B25EFF6D26B69E9C007417A0 /* CommandViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandViewModel.swift; sourceTree = "<group>"; };
 		B25EFF7126B6AAAB007417A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B25EFF7526B6BD9B007417A0 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		B25EFF7C26B72A97007417A0 /* TagDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagDetails.swift; path = "ScanMe - NFC reader/Models/TagDetails.swift"; sourceTree = SOURCE_ROOT; };
+		B25EFF7C26B72A97007417A0 /* CommandDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommandDetailsResponse.swift; path = "ScanMe - NFC reader/Models/CommandDetailsResponse.swift"; sourceTree = SOURCE_ROOT; };
 		B25EFF7E26B72E40007417A0 /* FirestoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirestoreError.swift; path = "ScanMe - NFC reader/Models/FirestoreError.swift"; sourceTree = SOURCE_ROOT; };
 		C954248A3644630D98432BDB /* Pods_ScanMe___NFC_reader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_ScanMe___NFC_reader.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0E3313265D6278006750A8 /* ScanMe - NFC reader.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "ScanMe - NFC reader.entitlements"; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 		B25EFF8126B73D49007417A0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B25EFF7C26B72A97007417A0 /* TagDetails.swift */,
+				B25EFF7C26B72A97007417A0 /* CommandDetailsResponse.swift */,
 				B25EFF7E26B72E40007417A0 /* FirestoreError.swift */,
 			);
 			path = Models;
@@ -302,7 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B25EFF7D26B72A97007417A0 /* TagDetails.swift in Sources */,
+				B25EFF7D26B72A97007417A0 /* CommandDetailsResponse.swift in Sources */,
 				DA1DAD4826B1EE09002FA5BD /* UIViewController.swift in Sources */,
 				DAFF5E8026A9F908004D469F /* Constants.swift in Sources */,
 				B25EFF7626B6BD9B007417A0 /* DataManager.swift in Sources */,

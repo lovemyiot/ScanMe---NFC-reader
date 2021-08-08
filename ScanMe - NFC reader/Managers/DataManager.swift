@@ -10,17 +10,17 @@ import FirebaseFirestoreSwift
 
 class DataManager {
     static let shared = DataManager()
-    let database: Firestore
+    private let database: Firestore
     
     private init() {
         self.database = Firestore.firestore()
     }
     
-    func fetchCommand(for identifier: String, from collectionName: String,completion: @escaping (Result<TagDetails, FirestoreError>) -> Void) {
+    func fetchCommand(for identifier: String, from collectionName: String,completion: @escaping (Result<CommandDetailsResponse, FirestoreError>) -> Void) {
         let documentReference = database.collection(collectionName).document(identifier)
         documentReference.getDocument { documentSnapshot, error in
             let result = Result {
-                try documentSnapshot?.data(as: TagDetails.self)
+                try documentSnapshot?.data(as: CommandDetailsResponse.self)
             }
             switch result {
             case .success(let tagDetails):

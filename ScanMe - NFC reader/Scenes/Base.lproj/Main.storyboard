@@ -73,6 +73,41 @@
             </objects>
             <point key="canvasLocation" x="139" y="104"/>
         </scene>
+        <!--Command View Controller-->
+        <scene sceneID="6Ep-bO-NXM">
+            <objects>
+                <viewController storyboardIdentifier="CommandViewController" id="ydj-1q-TSz" customClass="CommandViewController" customModule="ScanMe___NFC_reader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e97-DM-yHs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundBlue" translatesAutoresizingMaskIntoConstraints="NO" id="ECn-yp-K2W">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="YD7-ZG-O4i">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8d8-Cf-xxB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ECn-yp-K2W" secondAttribute="trailing" id="0jz-uw-aIQ"/>
+                            <constraint firstItem="ECn-yp-K2W" firstAttribute="top" secondItem="e97-DM-yHs" secondAttribute="top" id="DpB-Iq-2Wd"/>
+                            <constraint firstAttribute="bottom" secondItem="ECn-yp-K2W" secondAttribute="bottom" id="DtH-5h-gjB"/>
+                            <constraint firstItem="YD7-ZG-O4i" firstAttribute="centerX" secondItem="e97-DM-yHs" secondAttribute="centerX" id="OqQ-OM-qTW"/>
+                            <constraint firstItem="ECn-yp-K2W" firstAttribute="leading" secondItem="e97-DM-yHs" secondAttribute="leading" id="h5J-79-ydH"/>
+                            <constraint firstItem="YD7-ZG-O4i" firstAttribute="centerY" secondItem="e97-DM-yHs" secondAttribute="centerY" id="j4d-OU-wst"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="YD7-ZG-O4i" id="hM3-ps-Ku5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hoA-3b-LKo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="903" y="104"/>
+        </scene>
     </scenes>
     <resources>
         <image name="backgroundBlue" width="1024" height="1024"/>
