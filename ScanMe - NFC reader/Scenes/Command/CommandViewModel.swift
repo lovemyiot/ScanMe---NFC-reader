@@ -38,28 +38,6 @@ class CommandViewModel: NSObject {
         }
     }
     
-    func toggleFlashlight(on: Bool) {
-        guard let device = AVCaptureDevice.default(for: .video) else { return }
-
-        if device.hasTorch {
-            do {
-                try device.lockForConfiguration()
-
-                if on == true {
-                    device.torchMode = .on
-                } else {
-                    device.torchMode = .off
-                }
-
-                device.unlockForConfiguration()
-            } catch {
-                print("Flashlight could not be used.")
-            }
-        } else {
-            print("Flashlight is not available on this device.")
-        }
-    }
-    
     func sendTextMessageViewController(message: String, to phoneNumber: String) -> MFMessageComposeViewController {
         let viewController = MFMessageComposeViewController()
         viewController.body = message

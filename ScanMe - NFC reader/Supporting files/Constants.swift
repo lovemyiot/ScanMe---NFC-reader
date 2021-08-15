@@ -12,18 +12,20 @@ enum DescriptionKeys {
     static let sessionAlert = "Hold your iPhone near the item to see what happens."
     static let tooManyTags = "More than 1 tag detected. Please remove other items and try again."
     static let connectionFailed = "Connection failed. Try again."
+    
+    //MARK: - Device support
     static let scanningNotSupported = "This device doesn't support tag scanning."
     static let scanningNotSupportedTitle = "Scanning Not Supported"
+    static let smsNotSupported = "This device doesn't support sending text messages."
+    static let smsNotSupportedTitle = "SMS Not Supported"
     
     //MARK: - Command support
     static let commandNotSupported = "Received command is not supported."
     static let commandNotSupportedTitle = "Command Not Supported"
     
     //MARK: - Command validation
-    static let nonValidUrl = "Received URL is not a valid URL."
-    static let validationError = "Validation Error"
-    static let smsNotSupported = "This device doesn't support sending text messages."
-    static let smsNotSupportedTitle = "SMS Not Supported"
+    static let nonValidParameters = "Received parameters are not valid."
+    static let validationError = "Validation Error"    
 }
 
 enum FirestoreKeys {
