@@ -22,6 +22,8 @@ enum DescriptionKeys {
     //MARK: - Command validation
     static let nonValidUrl = "Received URL is not a valid URL."
     static let validationError = "Validation Error"
+    static let smsNotSupported = "This device doesn't support sending text messages."
+    static let smsNotSupportedTitle = "SMS Not Supported"
 }
 
 enum FirestoreKeys {

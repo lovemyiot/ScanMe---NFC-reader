@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class CommandViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -42,13 +43,23 @@ class CommandViewController: UIViewController {
             viewModel.toggleFlashlight(on: true)
             
         case .textMessage(let phoneNumber, let message):
-            viewModel.sendTextMessage(message: message, to: phoneNumber)
+            showTextMessageViewController(phoneNumber: phoneNumber, message: message)
             
         case .openUrl(let url):
             showSafariViewController(url: url)
             
         case .unsupported:
             showAlert(title: DescriptionKeys.commandNotSupportedTitle, message: DescriptionKeys.commandNotSupported)
+        }
+    }
+    
+    private func showTextMessageViewController(phoneNumber: String, message: String) {
+        if MFMessageComposeViewController.canSendText() {
+            let viewController = viewModel.sendTextMessageViewController(message: message, to: phoneNumber)
+            viewController.modalPresentationStyle = .pageSheet
+            present(viewController, animated: true, completion: nil)
+        } else {
+            showAlert(title: DescriptionKeys.smsNotSupportedTitle, message: DescriptionKeys.smsNotSupported)
         }
     }
     
@@ -61,5 +72,4 @@ class CommandViewController: UIViewController {
         viewController.modalPresentationStyle = .pageSheet
         present(viewController, animated: true, completion: nil)
     }
-
 }
