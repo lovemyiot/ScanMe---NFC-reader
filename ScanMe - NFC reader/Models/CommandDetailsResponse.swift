@@ -21,9 +21,9 @@ struct CommandDetailsResponse: Codable {
                 commandType = .textMessage(phoneNumber: phoneNumber, message: message)
             }
         case 3:
-            if let url = URL(string: arguments?[0] ?? "") {
-                commandType = .openUrl(url: url)
-            }
+            let url = URL(string: arguments?[0] ?? "")
+            commandType = .openUrl(url: url)
+            
         default:
             commandType = .unsupported
         }
@@ -34,6 +34,6 @@ struct CommandDetailsResponse: Codable {
 enum CommandType {
     case flashlight
     case textMessage(phoneNumber: String, message: String)
-    case openUrl(url: URL)
+    case openUrl(url: URL?)
     case unsupported
 }

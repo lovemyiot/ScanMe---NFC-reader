@@ -15,15 +15,6 @@ class HomeViewModel: NSObject {
         self.router = router
     }
     
-    func scanningNotSupportedAlert() -> UIAlertController {
-        let alertController = UIAlertController(
-                    title: "Scanning Not Supported",
-                    message: "This device doesn't support tag scanning.",
-                    preferredStyle: .alert
-                )
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        return alertController
-    }
 }
 
 // MARK: - NFCTagReaderSessionDelegate
@@ -51,8 +42,8 @@ extension HomeViewModel: NFCTagReaderSessionDelegate {
             case .miFare(let mifareTag):
                 let identifier = mifareTag.identifier.map { String(format: "%.2hhx", $0) }.joined()
                 print("MiFare tag detected: \(identifier)")
-                DispatchQueue.main.async {
-                    self.router.trigger(.handleCommand(tagIdentifier: identifier))
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+                    self?.router.trigger(.handleCommand(tagIdentifier: identifier))
                 }
             default:
                 print("Unsupported tag type detected!")

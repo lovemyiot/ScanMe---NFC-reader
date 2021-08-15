@@ -6,6 +6,8 @@
 //
 
 import XCoordinator
+import AVFoundation
+import SafariServices
 
 class CommandViewModel {
     let router: UnownedRouter<MainRoute>
@@ -33,5 +35,36 @@ class CommandViewModel {
                 }
             }
         }
+    }
+    
+    func toggleFlashlight(on: Bool) {
+        guard let device = AVCaptureDevice.default(for: .video) else { return }
+
+        if device.hasTorch {
+            do {
+                try device.lockForConfiguration()
+
+                if on == true {
+                    device.torchMode = .on
+                } else {
+                    device.torchMode = .off
+                }
+
+                device.unlockForConfiguration()
+            } catch {
+                print("Flashlight could not be used.")
+            }
+        } else {
+            print("Flashlight is not available on this device.")
+        }
+    }
+    
+    func sendTextMessage(message: String, to phoneNumber: String) {
+        
+    }
+    
+    func safariViewController(_ url: URL) -> SFSafariViewController {
+        let safariViewController = SFSafariViewController(url: url)
+        return safariViewController
     }
 }
