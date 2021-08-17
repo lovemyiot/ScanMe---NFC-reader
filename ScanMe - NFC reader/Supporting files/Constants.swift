@@ -25,7 +25,18 @@ enum DescriptionKeys {
     
     //MARK: - Command validation
     static let nonValidParameters = "Received parameters are not valid."
-    static let validationError = "Validation Error"    
+    static let validationError = "Validation Error"
+    
+    //MARK: - Command names
+    static let flashlight = "Toggle flashlight"
+    static let flashlightButton = "Toggle"
+    static let textMessage = "Text message"
+    static let textMessageButton = "Send text"
+    static let openUrl = "Open URL"
+    static let openUrlButton = "Open website"
+    static let call = "Make a call"
+    static let callButton = "Call"
+    static let unsupported = "Unsupported"
 }
 
 enum FirestoreKeys {

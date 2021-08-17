@@ -85,43 +85,81 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundBlue" translatesAutoresizingMaskIntoConstraints="NO" id="ECn-yp-K2W">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hJ-ff-2I0">
+                                <rect key="frame" x="30" y="562" width="354" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WOb-s0-uwf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="25"/>
+                                <state key="normal" title="PROCEED">
+                                    <color key="titleColor" systemColor="linkColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="proceedTapped:" destination="ydj-1q-TSz" eventType="touchUpInside" id="qcH-sc-KuY"/>
+                                </connections>
+                            </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="YD7-ZG-O4i">
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWe-vu-U8Y">
-                                <rect key="frame" x="10" y="59" width="63" height="21"/>
+                                <rect key="frame" x="10" y="59" width="64" height="19"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="63" id="ff3-bA-mwA"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="ff3-bA-mwA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Back">
-                                    <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="large"/>
+                                    <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="medium"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
                                 </state>
                                 <connections>
                                     <action selector="backTapped:" destination="ydj-1q-TSz" eventType="touchUpInside" id="MBa-4u-mLv"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Command:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHY-Ez-71x">
+                                <rect key="frame" x="30" y="128" width="126" height="25.5"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja7-Lg-sz9">
+                                <rect key="frame" x="30" y="203.5" width="184" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8d8-Cf-xxB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ECn-yp-K2W" secondAttribute="trailing" id="0jz-uw-aIQ"/>
-                            <constraint firstItem="8d8-Cf-xxB" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JWe-vu-U8Y" secondAttribute="trailing" constant="15" id="7Zl-3B-0eK"/>
+                            <constraint firstItem="5hJ-ff-2I0" firstAttribute="leading" secondItem="8d8-Cf-xxB" secondAttribute="leading" constant="30" id="4tg-t2-CTo"/>
+                            <constraint firstItem="8d8-Cf-xxB" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="JWe-vu-U8Y" secondAttribute="trailing" constant="340" id="7Zl-3B-0eK"/>
                             <constraint firstItem="JWe-vu-U8Y" firstAttribute="leading" secondItem="8d8-Cf-xxB" secondAttribute="leading" constant="10" id="Bc7-lc-77W"/>
                             <constraint firstItem="ECn-yp-K2W" firstAttribute="top" secondItem="e97-DM-yHs" secondAttribute="top" id="DpB-Iq-2Wd"/>
                             <constraint firstAttribute="bottom" secondItem="ECn-yp-K2W" secondAttribute="bottom" id="DtH-5h-gjB"/>
+                            <constraint firstItem="8d8-Cf-xxB" firstAttribute="bottom" secondItem="5hJ-ff-2I0" secondAttribute="bottom" constant="250" id="Eik-et-VMV"/>
+                            <constraint firstItem="Ja7-Lg-sz9" firstAttribute="leading" secondItem="8d8-Cf-xxB" secondAttribute="leading" constant="30" id="Iuc-OW-lZm"/>
+                            <constraint firstItem="8d8-Cf-xxB" firstAttribute="trailing" secondItem="5hJ-ff-2I0" secondAttribute="trailing" constant="30" id="J4C-kJ-hSB"/>
                             <constraint firstItem="JWe-vu-U8Y" firstAttribute="top" secondItem="8d8-Cf-xxB" secondAttribute="top" constant="15" id="JHQ-7f-PrU"/>
+                            <constraint firstItem="8d8-Cf-xxB" firstAttribute="trailing" secondItem="Ja7-Lg-sz9" secondAttribute="trailing" constant="200" id="LDf-MW-3aU"/>
                             <constraint firstItem="YD7-ZG-O4i" firstAttribute="centerX" secondItem="e97-DM-yHs" secondAttribute="centerX" id="OqQ-OM-qTW"/>
+                            <constraint firstItem="FHY-Ez-71x" firstAttribute="leading" secondItem="8d8-Cf-xxB" secondAttribute="leading" constant="30" id="TGF-9E-rNF"/>
                             <constraint firstItem="ECn-yp-K2W" firstAttribute="leading" secondItem="e97-DM-yHs" secondAttribute="leading" id="h5J-79-ydH"/>
                             <constraint firstItem="YD7-ZG-O4i" firstAttribute="centerY" secondItem="e97-DM-yHs" secondAttribute="centerY" id="j4d-OU-wst"/>
+                            <constraint firstItem="8d8-Cf-xxB" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="FHY-Ez-71x" secondAttribute="trailing" constant="299" id="rwQ-3k-09S"/>
+                            <constraint firstItem="Ja7-Lg-sz9" firstAttribute="top" secondItem="FHY-Ez-71x" secondAttribute="bottom" constant="50" id="tKX-hD-DaA"/>
+                            <constraint firstItem="FHY-Ez-71x" firstAttribute="top" secondItem="JWe-vu-U8Y" secondAttribute="bottom" constant="50" id="zvt-PK-0fn"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="YD7-ZG-O4i" id="hM3-ps-Ku5"/>
+                        <outlet property="commandNameLabel" destination="Ja7-Lg-sz9" id="6he-go-QMK"/>
+                        <outlet property="proceedButton" destination="5hJ-ff-2I0" id="ggT-Za-rtw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hoA-3b-LKo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
