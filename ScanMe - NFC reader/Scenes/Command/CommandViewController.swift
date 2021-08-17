@@ -20,15 +20,10 @@ class CommandViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        viewModel.toggleFlashlight(on: false)
     }
     
     private func setupView() {
-        navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.tintColor = .white
         activityIndicator.hidesWhenStopped = true
         activityIndicator.startAnimating()
         viewModel.fetchCommand {
@@ -57,34 +52,16 @@ class CommandViewController: UIViewController {
         }
     }
     
+    private func toggleFlashlight(on: Bool) {
+        viewModel.toggleFlashlight(on: on)
+    }
+    
     private func call(_ phoneNumber: String?) {
         guard let phoneNumber = phoneNumber, let phoneNumberUrl = URL(string: "tel://\(phoneNumber)") else {
             showAlert(title: DescriptionKeys.validationError, message: DescriptionKeys.nonValidParameters)
             return
         }
-        UIApplication.shared.open(phoneNumberUrl)
-    }
-    
-    private func toggleFlashlight(on: Bool) {
-        guard let device = AVCaptureDevice.default(for: .video) else { return }
-
-        if device.hasTorch {
-            do {
-                try device.lockForConfiguration()
-
-                if on == true {
-                    device.torchMode = .on
-                } else {
-                    device.torchMode = .off
-                }
-
-                device.unlockForConfiguration()
-            } catch {
-                print("Flashlight could not be used.")
-            }
-        } else {
-            print("Flashlight is not available on this device.")
-        }
+        viewModel.dialNumber(phoneNumberUrl)
     }
     
     private func showTextMessageViewController(phoneNumber: String?, message: String?) {
@@ -110,4 +87,10 @@ class CommandViewController: UIViewController {
         viewController.modalPresentationStyle = .pageSheet
         present(viewController, animated: true, completion: nil)
     }
+    
+    @IBAction func backTapped(_ sender: UIButton) {
+        viewModel.goBack()
+    }
+    
+    
 }

@@ -20,6 +20,10 @@ class CommandViewModel: NSObject {
         self.tagIdentifier = tagIdentifier
     }
     
+    func goBack() {
+        router.trigger(.back)
+    }
+    
     func fetchCommand(completion: @escaping () -> Void) {
         DataManager.shared.fetchCommand(for: tagIdentifier, from: FirestoreKeys.tagsCollection) {
             switch $0 {
@@ -35,6 +39,32 @@ class CommandViewModel: NSObject {
                     print("Document does not exist in Firestore!")
                 }
             }
+        }
+    }
+    
+    func dialNumber(_ url: URL) {
+        UIApplication.shared.open(url)
+    }
+    
+    func toggleFlashlight(on: Bool) {
+        guard let device = AVCaptureDevice.default(for: .video) else { return }
+
+        if device.hasTorch {
+            do {
+                try device.lockForConfiguration()
+
+                if on == true {
+                    device.torchMode = .on
+                } else {
+                    device.torchMode = .off
+                }
+
+                device.unlockForConfiguration()
+            } catch {
+                print("Flashlight could not be used.")
+            }
+        } else {
+            print("Flashlight is not available on this device.")
         }
     }
     

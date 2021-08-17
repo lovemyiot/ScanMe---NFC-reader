@@ -14,7 +14,6 @@ class HomeViewModel: NSObject {
     init(router: UnownedRouter<MainRoute>) {
         self.router = router
     }
-    
 }
 
 // MARK: - NFCTagReaderSessionDelegate

@@ -11,6 +11,7 @@ import XCoordinator
 enum MainRoute: Route {
     case home
     case handleCommand(tagIdentifier: String)
+    case back
 }
 
 class MainCoordinator: NavigationCoordinator<MainRoute> {
@@ -30,6 +31,9 @@ class MainCoordinator: NavigationCoordinator<MainRoute> {
             let viewController: CommandViewController = CommandViewController.instantiate()
             viewController.viewModel = CommandViewModel(router: unownedRouter, tagIdentifier: tagIdentifier)
             return .push(viewController)
+            
+        case .back:
+            return .pop()
         }
     }
 }

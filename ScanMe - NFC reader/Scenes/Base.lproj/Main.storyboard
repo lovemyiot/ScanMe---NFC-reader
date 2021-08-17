@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -88,13 +89,32 @@
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWe-vu-U8Y">
+                                <rect key="frame" x="10" y="59" width="63" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="63" id="ff3-bA-mwA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Back">
+                                    <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
+                                </state>
+                                <connections>
+                                    <action selector="backTapped:" destination="ydj-1q-TSz" eventType="touchUpInside" id="MBa-4u-mLv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8d8-Cf-xxB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ECn-yp-K2W" secondAttribute="trailing" id="0jz-uw-aIQ"/>
+                            <constraint firstItem="8d8-Cf-xxB" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JWe-vu-U8Y" secondAttribute="trailing" constant="15" id="7Zl-3B-0eK"/>
+                            <constraint firstItem="JWe-vu-U8Y" firstAttribute="leading" secondItem="8d8-Cf-xxB" secondAttribute="leading" constant="10" id="Bc7-lc-77W"/>
                             <constraint firstItem="ECn-yp-K2W" firstAttribute="top" secondItem="e97-DM-yHs" secondAttribute="top" id="DpB-Iq-2Wd"/>
                             <constraint firstAttribute="bottom" secondItem="ECn-yp-K2W" secondAttribute="bottom" id="DtH-5h-gjB"/>
+                            <constraint firstItem="JWe-vu-U8Y" firstAttribute="top" secondItem="8d8-Cf-xxB" secondAttribute="top" constant="15" id="JHQ-7f-PrU"/>
                             <constraint firstItem="YD7-ZG-O4i" firstAttribute="centerX" secondItem="e97-DM-yHs" secondAttribute="centerX" id="OqQ-OM-qTW"/>
                             <constraint firstItem="ECn-yp-K2W" firstAttribute="leading" secondItem="e97-DM-yHs" secondAttribute="leading" id="h5J-79-ydH"/>
                             <constraint firstItem="YD7-ZG-O4i" firstAttribute="centerY" secondItem="e97-DM-yHs" secondAttribute="centerY" id="j4d-OU-wst"/>
@@ -106,11 +126,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hoA-3b-LKo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="104"/>
+            <point key="canvasLocation" x="902.89855072463774" y="103.79464285714285"/>
         </scene>
     </scenes>
     <resources>
         <image name="backgroundBlue" width="1024" height="1024"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
