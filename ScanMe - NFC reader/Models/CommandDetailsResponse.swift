@@ -8,8 +8,12 @@
 import Foundation
 
 struct CommandDetailsResponse: Codable {
+    let commands: [Command]
+}
+
+struct Command: Codable {
     let commandId: Int
-    let arguments: [String]?
+    let arguments: Arguments?
     
     func toCommandType() -> CommandType {
         var commandType: CommandType = .unsupported
@@ -17,20 +21,26 @@ struct CommandDetailsResponse: Codable {
         case 1:
             commandType = .flashlight
         case 2:
-            let phoneNumber = arguments?[0]
-            let message = arguments?[1]
+            let phoneNumber = arguments?.phoneNumber
+            let message = arguments?.message
             commandType = .textMessage(phoneNumber: phoneNumber, message: message)
         case 3:
-            let url = URL(string: arguments?[0] ?? "")
+            let url = URL(string: arguments?.url ?? "")
             commandType = .openUrl(url: url)
         case 4:
-            let phoneNumber = arguments?[0]
+            let phoneNumber = arguments?.phoneNumber
             commandType = .call(phoneNumber: phoneNumber)
         default:
             commandType = .unsupported
         }
         return commandType
     }
+}
+
+struct Arguments: Codable {
+    let phoneNumber: String?
+    let message: String?
+    let url: String?
 }
 
 enum CommandType: Equatable {

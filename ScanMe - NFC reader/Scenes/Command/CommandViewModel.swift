@@ -12,7 +12,7 @@ import MessageUI
 class CommandViewModel: NSObject {
     private let router: UnownedRouter<MainRoute>
     private let tagIdentifier: String
-    var command: CommandType?
+    var commands: [CommandType] = []
     
     var onTextMessage: ((MFMessageComposeViewController) -> Void)?
     var onAlert: ((String, String) -> Void)?
@@ -31,7 +31,9 @@ class CommandViewModel: NSObject {
             switch $0 {
             case .success(let commandDetails):
                 print("Command details for tag \(self.tagIdentifier): \(commandDetails)")
-                self.command = commandDetails.toCommandType()
+                commandDetails.commands.forEach {
+                    self.commands.append($0.toCommandType())
+                }
                 completion()
             case .failure(let error):
                 switch error {
@@ -45,23 +47,23 @@ class CommandViewModel: NSObject {
     }
     
     func processCommand() {
-        guard let command = self.command else { return }
-        switch command {
-        case .flashlight:
-            toggleFlashlight()
-            
-        case .textMessage(let phoneNumber, let message):
-            sendText(message: message, to: phoneNumber)
-            
-        case .openUrl(let url):
-            open(url)
-            
-        case .call(let phoneNumber):
-            call(phoneNumber)
-            
-        case .unsupported:
-            onAlert?(DescriptionKeys.commandNotSupportedTitle, DescriptionKeys.commandNotSupported)
-        }
+//        guard let command = self.command else { return }
+//        switch command {
+//        case .flashlight:
+//            toggleFlashlight()
+//
+//        case .textMessage(let phoneNumber, let message):
+//            sendText(message: message, to: phoneNumber)
+//
+//        case .openUrl(let url):
+//            open(url)
+//
+//        case .call(let phoneNumber):
+//            call(phoneNumber)
+//
+//        case .unsupported:
+//            onAlert?(DescriptionKeys.commandNotSupportedTitle, DescriptionKeys.commandNotSupported)
+//        }
     }
     
     private func call(_ phoneNumber: String?) {

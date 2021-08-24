@@ -41,11 +41,11 @@ class CommandViewController: UIViewController {
     
     private func fetchData() {
         viewModel.fetchCommand {
-            self.commandNameLabel.text = self.viewModel.command?.title
+//            self.commandNameLabel.text = self.viewModel.command?.title
             self.commandNameLabel.isHidden = false
-            self.proceedButton.setTitle(self.viewModel.command?.buttonTitle, for: [])
+//            self.proceedButton.setTitle(self.viewModel.command?.buttonTitle, for: [])
             self.proceedButton.isHidden = false
-            self.proceedButton.isEnabled = self.viewModel.command != .unsupported
+            self.proceedButton.isEnabled = !self.viewModel.commands.contains { $0 == .unsupported }
             self.activityIndicator.stopAnimating()
         }
     }
