@@ -7,13 +7,15 @@
 
 import XCoordinator
 import AVFoundation
-import SafariServices
 import MessageUI
 
 class CommandViewModel: NSObject {
-    let router: UnownedRouter<MainRoute>
+    private let router: UnownedRouter<MainRoute>
     private let tagIdentifier: String
     var command: CommandType?
+    
+    var onTextMessage: ((MFMessageComposeViewController) -> Void)?
+    var onAlert: ((String, String) -> Void)?
     
     init(router: UnownedRouter<MainRoute>, tagIdentifier: String) {
         self.router = router
@@ -42,23 +44,46 @@ class CommandViewModel: NSObject {
         }
     }
     
-    func dialNumber(_ url: URL) {
-        UIApplication.shared.open(url)
+    func processCommand() {
+        guard let command = self.command else { return }
+        switch command {
+        case .flashlight:
+            toggleFlashlight()
+            
+        case .textMessage(let phoneNumber, let message):
+            sendText(message: message, to: phoneNumber)
+            
+        case .openUrl(let url):
+            open(url)
+            
+        case .call(let phoneNumber):
+            call(phoneNumber)
+            
+        case .unsupported:
+            onAlert?(DescriptionKeys.commandNotSupportedTitle, DescriptionKeys.commandNotSupported)
+        }
     }
     
-    func toggleFlashlight(on: Bool) {
+    private func call(_ phoneNumber: String?) {
+        guard let phoneNumber = phoneNumber, let phoneNumberUrl = URL(string: "tel://\(phoneNumber)") else {
+            onAlert?(DescriptionKeys.validationError, DescriptionKeys.nonValidParameters)
+            return
+        }
+        UIApplication.shared.open(phoneNumberUrl)
+    }
+    
+    private func toggleFlashlight(mode: AVCaptureDevice.TorchMode? = nil) {
         guard let device = AVCaptureDevice.default(for: .video) else { return }
 
         if device.hasTorch {
             do {
                 try device.lockForConfiguration()
-
-                if on == true {
-                    device.torchMode = .on
-                } else {
-                    device.torchMode = .off
+                guard let mode = mode else {
+                    device.torchMode = device.torchMode == .off ? .on : .off
+                    device.unlockForConfiguration()
+                    return
                 }
-
+                device.torchMode = mode
                 device.unlockForConfiguration()
             } catch {
                 print("Flashlight could not be used.")
@@ -68,17 +93,28 @@ class CommandViewModel: NSObject {
         }
     }
     
-    func sendTextMessageViewController(message: String, to phoneNumber: String) -> MFMessageComposeViewController {
-        let viewController = MFMessageComposeViewController()
-        viewController.body = message
-        viewController.recipients = [phoneNumber]
-        viewController.messageComposeDelegate = self
-        return viewController
+    private func sendText(message: String?, to phoneNumber: String?) {
+        guard let phoneNumber = phoneNumber, let message = message else {
+            onAlert?(DescriptionKeys.validationError, DescriptionKeys.nonValidParameters)
+            return
+        }
+        if MFMessageComposeViewController.canSendText() {
+            let messageViewController = MFMessageComposeViewController()
+            messageViewController.body = message
+            messageViewController.recipients = [phoneNumber]
+            messageViewController.messageComposeDelegate = self
+            onTextMessage?(messageViewController)
+        } else {
+            onAlert?(DescriptionKeys.smsNotSupportedTitle, DescriptionKeys.smsNotSupported)
+        }
     }
     
-    func safariViewController(_ url: URL) -> SFSafariViewController {
-        let safariViewController = SFSafariViewController(url: url)
-        return safariViewController
+    private func open(_ url: URL?) {
+        guard let url = url else {
+            onAlert?(DescriptionKeys.validationError, DescriptionKeys.nonValidParameters)
+            return
+        }
+        UIApplication.shared.open(url)
     }
 }
 

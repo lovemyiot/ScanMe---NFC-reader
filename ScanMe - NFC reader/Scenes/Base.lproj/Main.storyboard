@@ -146,7 +146,7 @@
                             <constraint firstItem="Ja7-Lg-sz9" firstAttribute="leading" secondItem="8d8-Cf-xxB" secondAttribute="leading" constant="30" id="Iuc-OW-lZm"/>
                             <constraint firstItem="8d8-Cf-xxB" firstAttribute="trailing" secondItem="5hJ-ff-2I0" secondAttribute="trailing" constant="30" id="J4C-kJ-hSB"/>
                             <constraint firstItem="JWe-vu-U8Y" firstAttribute="top" secondItem="8d8-Cf-xxB" secondAttribute="top" constant="15" id="JHQ-7f-PrU"/>
-                            <constraint firstItem="8d8-Cf-xxB" firstAttribute="trailing" secondItem="Ja7-Lg-sz9" secondAttribute="trailing" constant="200" id="LDf-MW-3aU"/>
+                            <constraint firstItem="8d8-Cf-xxB" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Ja7-Lg-sz9" secondAttribute="trailing" constant="200" id="LDf-MW-3aU"/>
                             <constraint firstItem="YD7-ZG-O4i" firstAttribute="centerX" secondItem="e97-DM-yHs" secondAttribute="centerX" id="OqQ-OM-qTW"/>
                             <constraint firstItem="FHY-Ez-71x" firstAttribute="leading" secondItem="8d8-Cf-xxB" secondAttribute="leading" constant="30" id="TGF-9E-rNF"/>
                             <constraint firstItem="ECn-yp-K2W" firstAttribute="leading" secondItem="e97-DM-yHs" secondAttribute="leading" id="h5J-79-ydH"/>
