@@ -8,7 +8,19 @@
 import Foundation
 
 struct CommandDetailsResponse: Codable {
+    let condition: Condition?
     let commands: [Command]
+}
+
+struct Condition: Codable {
+    let type: ConditionType
+    let startTime: String?
+    let endTime: String?
+    
+    enum ConditionType: String, Codable {
+        case time = "time"
+        case location = "location"
+    }
 }
 
 struct Command: Codable {
@@ -41,42 +53,4 @@ struct Arguments: Codable {
     let phoneNumber: String?
     let message: String?
     let url: String?
-}
-
-enum CommandType: Equatable {
-    case flashlight
-    case textMessage(phoneNumber: String?, message: String?)
-    case openUrl(url: URL?)
-    case call(phoneNumber: String?)
-    case unsupported
-    
-    var title: String {
-        switch self {
-        case .flashlight:
-            return DescriptionKeys.flashlight
-        case .textMessage:
-            return DescriptionKeys.textMessage
-        case .openUrl:
-            return DescriptionKeys.openUrl
-        case .call:
-            return DescriptionKeys.call
-        case .unsupported:
-            return DescriptionKeys.unsupported
-        }
-    }
-    
-    var buttonTitle: String {
-        switch self {
-        case .flashlight:
-            return DescriptionKeys.flashlightButton
-        case .textMessage:
-            return DescriptionKeys.textMessageButton
-        case .openUrl:
-            return DescriptionKeys.openUrlButton
-        case .call:
-            return DescriptionKeys.callButton
-        case .unsupported:
-            return DescriptionKeys.unsupported
-        }
-    }
 }

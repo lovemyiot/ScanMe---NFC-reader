@@ -47,6 +47,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kyM-ty-JO8">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -58,15 +62,18 @@
                             <constraint firstAttribute="trailing" secondItem="F5z-uO-Dgi" secondAttribute="trailing" id="RdM-7O-2h2"/>
                             <constraint firstItem="F5z-uO-Dgi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="X06-G1-L0c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tAd-aJ-iem" secondAttribute="trailing" constant="50" id="bX7-us-mkZ"/>
+                            <constraint firstItem="kyM-ty-JO8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dvu-We-Ey0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eMU-QI-WTh" secondAttribute="trailing" constant="50" id="eVb-EZ-Nkh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NHF-vY-ZUf" secondAttribute="trailing" constant="30" id="hl6-dR-RDm"/>
                             <constraint firstItem="eMU-QI-WTh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="iHS-aD-Q8c"/>
+                            <constraint firstItem="kyM-ty-JO8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jZD-At-sPo"/>
                             <constraint firstItem="eMU-QI-WTh" firstAttribute="top" secondItem="tAd-aJ-iem" secondAttribute="bottom" constant="25" id="kKh-oK-2zn"/>
                             <constraint firstItem="tAd-aJ-iem" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="rzo-R5-Hob"/>
                             <constraint firstAttribute="bottom" secondItem="F5z-uO-Dgi" secondAttribute="bottom" id="tP5-xr-azC"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="kyM-ty-JO8" id="KZR-y2-m3b"/>
                         <outlet property="detectButton" destination="NHF-vY-ZUf" id="PQn-0a-QuA"/>
                     </connections>
                 </viewController>

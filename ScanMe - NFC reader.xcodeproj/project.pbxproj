@@ -13,6 +13,8 @@
 		B25EFF7626B6BD9B007417A0 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EFF7526B6BD9B007417A0 /* DataManager.swift */; };
 		B25EFF7D26B72A97007417A0 /* CommandDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EFF7C26B72A97007417A0 /* CommandDetailsResponse.swift */; };
 		B25EFF7F26B72E40007417A0 /* FirestoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EFF7E26B72E40007417A0 /* FirestoreError.swift */; };
+		B2BEC59A26D80A29006FE15B /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BEC59926D80A29006FE15B /* CommandManager.swift */; };
+		B2FC823A26D828AC00A48027 /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC823926D828AC00A48027 /* CommandType.swift */; };
 		C1D880D021CE1154F935AC05 /* Pods_ScanMe___NFC_reader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C954248A3644630D98432BDB /* Pods_ScanMe___NFC_reader.framework */; };
 		DA1DAD4526B1EBA4002FA5BD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DAD4426B1EBA4002FA5BD /* MainCoordinator.swift */; };
 		DA1DAD4826B1EE09002FA5BD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DAD4726B1EE09002FA5BD /* UIViewController.swift */; };
@@ -35,6 +37,8 @@
 		B25EFF7526B6BD9B007417A0 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		B25EFF7C26B72A97007417A0 /* CommandDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommandDetailsResponse.swift; path = "ScanMe - NFC reader/Models/CommandDetailsResponse.swift"; sourceTree = SOURCE_ROOT; };
 		B25EFF7E26B72E40007417A0 /* FirestoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirestoreError.swift; path = "ScanMe - NFC reader/Models/FirestoreError.swift"; sourceTree = SOURCE_ROOT; };
+		B2BEC59926D80A29006FE15B /* CommandManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandManager.swift; sourceTree = "<group>"; };
+		B2FC823926D828AC00A48027 /* CommandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandType.swift; sourceTree = "<group>"; };
 		C954248A3644630D98432BDB /* Pods_ScanMe___NFC_reader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_ScanMe___NFC_reader.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0E3313265D6278006750A8 /* ScanMe - NFC reader.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "ScanMe - NFC reader.entitlements"; sourceTree = "<group>"; };
 		DA1DAD4426B1EBA4002FA5BD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				B25EFF7526B6BD9B007417A0 /* DataManager.swift */,
+				B2BEC59926D80A29006FE15B /* CommandManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 			children = (
 				B25EFF7C26B72A97007417A0 /* CommandDetailsResponse.swift */,
 				B25EFF7E26B72E40007417A0 /* FirestoreError.swift */,
+				B2FC823926D828AC00A48027 /* CommandType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -305,9 +311,11 @@
 				B25EFF7D26B72A97007417A0 /* CommandDetailsResponse.swift in Sources */,
 				DA1DAD4826B1EE09002FA5BD /* UIViewController.swift in Sources */,
 				DAFF5E8026A9F908004D469F /* Constants.swift in Sources */,
+				B2BEC59A26D80A29006FE15B /* CommandManager.swift in Sources */,
 				B25EFF7626B6BD9B007417A0 /* DataManager.swift in Sources */,
 				DAF44B052613371700883D19 /* HomeViewController.swift in Sources */,
 				DAF44B012613371700883D19 /* AppDelegate.swift in Sources */,
+				B2FC823A26D828AC00A48027 /* CommandType.swift in Sources */,
 				B25EFF6A26B694F8007417A0 /* CommandViewController.swift in Sources */,
 				DAF44B032613371700883D19 /* SceneDelegate.swift in Sources */,
 				B25EFF7F26B72E40007417A0 /* FirestoreError.swift in Sources */,
