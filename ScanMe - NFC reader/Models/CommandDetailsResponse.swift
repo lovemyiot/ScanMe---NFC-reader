@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import CoreLocation
+import FirebaseFirestore
 
 struct CommandDetailsResponse: Codable {
     let condition: Condition?
@@ -16,6 +18,8 @@ struct Condition: Codable {
     let type: ConditionType
     let startTime: String?
     let endTime: String?
+    let coordinates: GeoPoint?
+    let radius: Int?
     
     enum ConditionType: String, Codable {
         case time = "time"

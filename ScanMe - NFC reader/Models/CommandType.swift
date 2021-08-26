@@ -2,7 +2,7 @@
 //  CommandType.swift
 //  ScanMe - NFC reader
 //
-//  Created by jacek.kopaczel on 26/08/2021.
+//  Created by Jacek Kopaczel on 26/08/2021.
 //
 
 import Foundation

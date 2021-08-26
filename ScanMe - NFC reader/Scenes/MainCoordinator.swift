@@ -10,7 +10,6 @@ import XCoordinator
 
 enum MainRoute: Route {
     case home
-    case handleCommand(tagIdentifier: String)
     case back
 }
 
@@ -25,11 +24,6 @@ class MainCoordinator: NavigationCoordinator<MainRoute> {
         case .home:
             let viewController: HomeViewController = HomeViewController.instantiate()
             viewController.viewModel = HomeViewModel(router: unownedRouter)
-            return .push(viewController)
-            
-        case let .handleCommand(tagIdentifier):
-            let viewController: CommandViewController = CommandViewController.instantiate()
-            viewController.viewModel = CommandViewModel(router: unownedRouter, tagIdentifier: tagIdentifier)
             return .push(viewController)
             
         case .back:

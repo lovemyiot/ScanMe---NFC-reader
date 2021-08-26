@@ -23,7 +23,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NFCReaderUsageDescription</key>
-	<string>Use NFC for reading tags</string>
+	<string>Using NFC is required for reading tags.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your location is required to provide location-specific experience.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B25EFF6A26B694F8007417A0 /* CommandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EFF6926B694F8007417A0 /* CommandViewController.swift */; };
-		B25EFF6E26B69E9C007417A0 /* CommandViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EFF6D26B69E9C007417A0 /* CommandViewModel.swift */; };
 		B25EFF7226B6AAAB007417A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B25EFF7126B6AAAB007417A0 /* GoogleService-Info.plist */; };
 		B25EFF7626B6BD9B007417A0 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EFF7526B6BD9B007417A0 /* DataManager.swift */; };
 		B25EFF7D26B72A97007417A0 /* CommandDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EFF7C26B72A97007417A0 /* CommandDetailsResponse.swift */; };
@@ -31,8 +29,6 @@
 /* Begin PBXFileReference section */
 		3A8F971CF87FAC50E5F6FC16 /* Pods-ScanMe - NFC reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanMe - NFC reader.debug.xcconfig"; path = "Target Support Files/Pods-ScanMe - NFC reader/Pods-ScanMe - NFC reader.debug.xcconfig"; sourceTree = "<group>"; };
 		72272B49AA9FEE08073933A1 /* Pods-ScanMe - NFC reader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanMe - NFC reader.release.xcconfig"; path = "Target Support Files/Pods-ScanMe - NFC reader/Pods-ScanMe - NFC reader.release.xcconfig"; sourceTree = "<group>"; };
-		B25EFF6926B694F8007417A0 /* CommandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandViewController.swift; sourceTree = "<group>"; };
-		B25EFF6D26B69E9C007417A0 /* CommandViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandViewModel.swift; sourceTree = "<group>"; };
 		B25EFF7126B6AAAB007417A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B25EFF7526B6BD9B007417A0 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		B25EFF7C26B72A97007417A0 /* CommandDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommandDetailsResponse.swift; path = "ScanMe - NFC reader/Models/CommandDetailsResponse.swift"; sourceTree = SOURCE_ROOT; };
@@ -84,22 +80,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B25EFF6826B69347007417A0 /* Command */ = {
-			isa = PBXGroup;
-			children = (
-				B25EFF6926B694F8007417A0 /* CommandViewController.swift */,
-				B25EFF6D26B69E9C007417A0 /* CommandViewModel.swift */,
-			);
-			path = Command;
-			sourceTree = "<group>";
-		};
 		B25EFF6C26B69E07007417A0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				DA1DAD4426B1EBA4002FA5BD /* MainCoordinator.swift */,
 				DAF44B062613371700883D19 /* Main.storyboard */,
 				DA3159382639FBC600141617 /* Home */,
-				B25EFF6826B69347007417A0 /* Command */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -316,12 +302,10 @@
 				DAF44B052613371700883D19 /* HomeViewController.swift in Sources */,
 				DAF44B012613371700883D19 /* AppDelegate.swift in Sources */,
 				B2FC823A26D828AC00A48027 /* CommandType.swift in Sources */,
-				B25EFF6A26B694F8007417A0 /* CommandViewController.swift in Sources */,
 				DAF44B032613371700883D19 /* SceneDelegate.swift in Sources */,
 				B25EFF7F26B72E40007417A0 /* FirestoreError.swift in Sources */,
 				DAFF5E7D26A9F772004D469F /* HomeViewModel.swift in Sources */,
 				DA1DAD4526B1EBA4002FA5BD /* MainCoordinator.swift in Sources */,
-				B25EFF6E26B69E9C007417A0 /* CommandViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

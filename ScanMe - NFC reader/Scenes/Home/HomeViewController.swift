@@ -28,6 +28,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         checkNFCAvailability()
         setupView()
+        CommandManager.shared.locationManager.requestWhenInUseAuthorization()
     }
     
     private func setupView() {
@@ -93,3 +94,5 @@ extension HomeViewController: NFCTagReaderSessionDelegate {
         }
     }
 }
+
+
