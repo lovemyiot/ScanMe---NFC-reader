@@ -34,23 +34,4 @@ class DataManager {
             }
         }
     }
-    
-    
-    // MARK: Test method for saving new records in Firestore
-    func addElement(collectionName: String, identifier: String) {
-        let collection = database.collection(collectionName)
-        var numberOfDocuments = 0
-        collection.getDocuments { snapshot, error in
-            if error != nil {
-                print("Error fetching documents from Firestore: \(error!.localizedDescription).")
-            }
-            guard let count = snapshot?.documents.count else {
-                print("No documents found in Firestore.")
-                return
-            }
-            numberOfDocuments = count
-            let documentReference = collection.document(identifier)
-            documentReference.setData(["commandId" : numberOfDocuments + 1])
-        }
-    }
 }
