@@ -80,13 +80,16 @@ extension HomeViewController: NFCTagReaderSessionDelegate {
                 }
                 let identifier = mifareTag.identifier.map { String(format: "%.2hhx", $0) }.joined()
                 print("MiFare tag detected: \(identifier)")
-                self.viewModel.fetchCommand(for: identifier) { [weak self] commandDetails in
-                    self?.viewModel.processCommand(commandDetails) { [weak self] in
-                        DispatchQueue.main.async {
-                            self?.activityIndicator.stopAnimating()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.viewModel.fetchCommand(for: identifier) { [weak self] commandDetails in
+                        self?.viewModel.processCommand(commandDetails) { [weak self] in
+                            DispatchQueue.main.async {
+                                self?.activityIndicator.stopAnimating()
+                            }
                         }
                     }
                 }
+                
             default:
                 print("Unsupported tag type detected!")
             }

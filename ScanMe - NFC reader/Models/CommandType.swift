@@ -12,6 +12,7 @@ enum CommandType: Equatable {
     case textMessage(phoneNumber: String?, message: String?)
     case openUrl(url: URL?)
     case call(phoneNumber: String?)
+    case wifi(ssid: String?, password: String?)
     case unsupported
     
     var title: String {
@@ -26,21 +27,8 @@ enum CommandType: Equatable {
             return DescriptionKeys.call
         case .unsupported:
             return DescriptionKeys.unsupported
-        }
-    }
-    
-    var buttonTitle: String {
-        switch self {
-        case .flashlight:
-            return DescriptionKeys.flashlightButton
-        case .textMessage:
-            return DescriptionKeys.textMessageButton
-        case .openUrl:
-            return DescriptionKeys.openUrlButton
-        case .call:
-            return DescriptionKeys.callButton
-        case .unsupported:
-            return DescriptionKeys.unsupported
+        case .wifi:
+            return DescriptionKeys.wifi
         }
     }
 }

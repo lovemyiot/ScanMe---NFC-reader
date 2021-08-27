@@ -5,10 +5,10 @@
 //  Created by Jacek Kopaczel on 22/07/2021.
 //
 
-import CoreNFC
 import XCoordinator
 import MessageUI
 import AVFoundation
+import NetworkExtension
 
 class HomeViewModel: NSObject {
     private let router: UnownedRouter<MainRoute>
@@ -47,7 +47,7 @@ class HomeViewModel: NSObject {
             case .flashlight:
                 self?.toggleFlashlight()
 
-            case .textMessage(let phoneNumber, let message):
+            case let .textMessage(phoneNumber, message):
                 self?.sendText(message: message, to: phoneNumber)
 
             case .openUrl(let url):
@@ -55,11 +55,37 @@ class HomeViewModel: NSObject {
 
             case .call(let phoneNumber):
                 self?.call(phoneNumber)
-
+                
+            case let .wifi(ssid,password):
+                self?.connectToWifi(ssid: ssid, password: password)
+                
             case .unsupported:
                 self?.onAlert?(DescriptionKeys.commandNotSupportedTitle, DescriptionKeys.commandNotSupported)
             }
             completion()
+        }
+    }
+    
+    private func connectToWifi(ssid: String?, password: String?) {
+        guard let ssid = ssid, let password = password else {
+            onAlert?(DescriptionKeys.validationError, DescriptionKeys.nonValidParameters)
+            return
+        }
+        let configuration = NEHotspotConfiguration(ssid: ssid, passphrase: password, isWEP: false)
+        NEHotspotConfigurationManager.shared.apply(configuration) { [weak self] error in
+            if let error = error as NSError?,
+               error.domain == NEHotspotConfigurationErrorDomain {
+                switch error.code {
+                case NEHotspotConfigurationError.alreadyAssociated.rawValue:
+                    print("Specified WiFi is already associated")
+                case NEHotspotConfigurationError.userDenied.rawValue:
+                    print("User denied connecting to WiFi")
+                default:
+                    self?.onAlert?(DescriptionKeys.wifiError, DescriptionKeys.couldNotConnectToWifi)
+                }
+                return
+            }
+            print("Successfully connected to WiFi: \(ssid)")
         }
     }
 

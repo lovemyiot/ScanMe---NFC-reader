@@ -37,15 +37,14 @@ struct Command: Codable {
         case 1:
             commandType = .flashlight
         case 2:
-            let phoneNumber = arguments?.phoneNumber
-            let message = arguments?.message
-            commandType = .textMessage(phoneNumber: phoneNumber, message: message)
+            commandType = .textMessage(phoneNumber: arguments?.phoneNumber, message: arguments?.message)
         case 3:
             let url = URL(string: arguments?.url ?? "")
             commandType = .openUrl(url: url)
         case 4:
-            let phoneNumber = arguments?.phoneNumber
-            commandType = .call(phoneNumber: phoneNumber)
+            commandType = .call(phoneNumber: arguments?.phoneNumber)
+        case 5:
+            commandType = .wifi(ssid: arguments?.ssid, password: arguments?.wifiPassword)
         default:
             commandType = .unsupported
         }
@@ -57,4 +56,6 @@ struct Arguments: Codable {
     let phoneNumber: String?
     let message: String?
     let url: String?
+    let ssid: String?
+    let wifiPassword: String?
 }
