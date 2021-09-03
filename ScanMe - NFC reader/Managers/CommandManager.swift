@@ -50,9 +50,8 @@ class CommandManager: NSObject {
                 completion(nil)
                 return
             }
-            onLocationUpdate = { [weak self] userCoordinates in
-                guard let self = self else { return }
-                let convertedCoordinates = self.convertToCoordinates(point: coordinates)
+            onLocationUpdate = { userCoordinates in
+                let convertedCoordinates = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
                 let convertedRadius = CLLocationDistance(radius)
                 let region = CLCircularRegion(center: convertedCoordinates, radius: convertedRadius, identifier: "region")
                 let command = region.contains(userCoordinates) ? commandDetails.commands[0] : commandDetails.commands[1]
@@ -60,12 +59,6 @@ class CommandManager: NSObject {
             }
             locationManager.requestLocation()
         }
-    }
-    
-    private func convertToCoordinates(point: GeoPoint) -> CLLocationCoordinate2D {
-        let latitude = CLLocationDegrees(point.latitude)
-        let longitude = CLLocationDegrees(point.longitude)
-        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
     
     private func todayAt(_ time: String) -> Date? {

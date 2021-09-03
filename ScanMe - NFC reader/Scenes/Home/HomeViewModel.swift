@@ -9,6 +9,7 @@ import XCoordinator
 import MessageUI
 import AVFoundation
 import NetworkExtension
+import MapKit
 
 class HomeViewModel: NSObject {
     private let router: UnownedRouter<MainRoute>
@@ -61,9 +62,23 @@ class HomeViewModel: NSObject {
                 
             case .unsupported:
                 self?.onAlert?(DescriptionKeys.commandNotSupportedTitle, DescriptionKeys.commandNotSupported)
+                
+            case let .openMap(coordinates):
+                self?.openMap(latitude: coordinates?.latitude, longitude: coordinates?.longitude)
             }
             completion()
         }
+    }
+    
+    private func openMap(latitude: Double?, longitude: Double?) {
+        guard let latitude = latitude, let longitude = longitude else {
+            onAlert?(DescriptionKeys.validationError, DescriptionKeys.nonValidParameters)
+            return
+        }
+        let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let placemark = MKPlacemark(coordinate: coordinates)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.openInMaps(launchOptions: nil)
     }
     
     private func connectToWifi(ssid: String?, password: String?) {

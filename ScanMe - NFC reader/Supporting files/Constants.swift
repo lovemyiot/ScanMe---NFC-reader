@@ -34,6 +34,7 @@ enum DescriptionKeys {
     static let call = "Make a call"
     static let unsupported = "Unsupported"
     static let wifi = "Connect to WiFi"
+    static let openMap = "Open map"
     
     // MARK: - Running command error
     static let wifiError = "WiFi connection error"
