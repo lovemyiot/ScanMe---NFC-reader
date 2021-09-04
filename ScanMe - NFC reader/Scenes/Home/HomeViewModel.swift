@@ -22,7 +22,7 @@ class HomeViewModel: NSObject {
     }
 
     func fetchCommand(for identifier: String, completion: @escaping (CommandDetailsResponse) -> Void) {
-        DataManager.shared.fetchCommand(for: identifier, from: FirestoreKeys.tagsCollection) {
+        DataManager.shared.fetchCommand(for: identifier, from: FirestoreKeys.tagsCollection) { [weak self] in
             switch $0 {
             case .success(let commandDetails):
                 print("Command details for tag \(identifier): \(commandDetails)")
@@ -33,6 +33,7 @@ class HomeViewModel: NSObject {
                     print("Error decoding response from Firestore!")
                 case .documentNotExist:
                     print("Document does not exist in Firestore!")
+                    self?.onAlert?(DescriptionKeys.tagNotSupportedTitle, DescriptionKeys.tagNotSupported)
                 }
             }
         }

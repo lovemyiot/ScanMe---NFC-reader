@@ -19,9 +19,11 @@ enum DescriptionKeys {
     static let smsNotSupported = "This device doesn't support sending text messages."
     static let smsNotSupportedTitle = "SMS Not Supported"
     
-    // MARK: - Command support
+    // MARK: - Tag and command support
     static let commandNotSupported = "Received command is not supported."
     static let commandNotSupportedTitle = "Command Not Supported"
+    static let tagNotSupported = "Scanned tag is not supported."
+    static let tagNotSupportedTitle = "Tag not supported"
     
     // MARK: - Command validation
     static let nonValidParameters = "Received parameters are not valid."
