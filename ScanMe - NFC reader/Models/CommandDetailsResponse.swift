@@ -32,7 +32,7 @@ struct Command: Codable {
     let arguments: Arguments?
     
     func toCommandType() -> CommandType {
-        var commandType: CommandType = .unsupported
+        let commandType: CommandType
         switch commandId {
         case 1:
             commandType = .flashlight
