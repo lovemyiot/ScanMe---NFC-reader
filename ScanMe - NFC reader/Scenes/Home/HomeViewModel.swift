@@ -45,6 +45,7 @@ class HomeViewModel: NSObject {
         CommandManager.shared.processCommands(commandDetails) { [weak self] command in
             guard let safeCommand = command else {
                 print("Error processing command!")
+                completion()
                 return
             }
             switch safeCommand {
