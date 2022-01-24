@@ -21,12 +21,13 @@ class HomeViewModel: NSObject {
         self.router = router
     }
 
-    func fetchCommand(for identifier: String, completion: @escaping (CommandDetailsResponse) -> Void) {
+    func fetchCommand(for identifier: String, completion: @escaping (CommandDetailsResponse?) -> Void) {
         DataManager.shared.fetchCommand(for: identifier, from: FirestoreKeys.tagsCollection) { [weak self] in
+            var details: CommandDetailsResponse?
             switch $0 {
             case .success(let commandDetails):
                 print("Command details for tag \(identifier): \(commandDetails)")
-                completion(commandDetails)
+                details = commandDetails
             case .failure(let error):
                 switch error {
                 case .decodingError:
@@ -36,6 +37,7 @@ class HomeViewModel: NSObject {
                     self?.onAlert?(DescriptionKeys.tagNotSupportedTitle, DescriptionKeys.tagNotSupported)
                 }
             }
+            completion(details)
         }
     }
 

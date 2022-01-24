@@ -82,6 +82,12 @@ extension HomeViewController: NFCTagReaderSessionDelegate {
                 print("MiFare tag detected: \(identifier)")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     self.viewModel.fetchCommand(for: identifier) { [weak self] commandDetails in
+                        guard let commandDetails = commandDetails else {
+                            DispatchQueue.main.async {
+                                self?.activityIndicator.stopAnimating()
+                            }
+                            return
+                        }
                         self?.viewModel.processCommand(commandDetails) { [weak self] in
                             DispatchQueue.main.async {
                                 self?.activityIndicator.stopAnimating()
